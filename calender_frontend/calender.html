@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/022/287/140/original/3d-rendering-timing-concept-with-clock-and-check-list-on-clipboard-icon-3d-render-clipboard-with-complete-checklist-icon-timing-concept-with-clock-and-check-list-on-clipboard-png.png" type="image/x-icon">
+    <title>Clickday</title>
+    <link rel="stylesheet" href="./calender.css">
+</head>
+<body>
+<div class="calenderWrapper"> 
+<div class="topNav">
+    ClickDay 
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="Day">Day</a>
+            <a href="Week">Week</a>
+        </div>
+    </div>  
+</div>
+<div class="mainWrapper">
+    <div class="leftSide">
+        <h1>Menu</h1>
+        <div class="currMonth">
+        <button class="arrowButton" id="left"><</button>
+        <h2 class="monthLabel"></h2>
+        <button class="arrowButton" id="right">></button>    
+    </div>
+        <button type="button" class="addtask" onclick="openModal('myModal')">Add task</button>
+            <div id="myModal" class="jw-modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <p class="errorBox"></p>
+               <div>
+                   <label for="taskinput">Enter Name: </label>
+                   <input type="text" name="taskinput" class="tasknameInput" />
+               </div>
+               <div>
+
+                   <label for="taskType">Task Type: </label>
+                   <select name="cars" id="taskType" default="Event" name="taskStatus">
+                       <option value="event">Event</option>
+                       <option value="meeting">Meeting</option>
+                       <option value="random">Random Chit Chat</option>
+                    </select> 
+                </div>
+                <div>
+                    <label for="datetime">Start Date and Time:</label>
+                    <input type="datetime-local" id="datetime" name="datetime" class="startDate">
+                </div>
+              <div>
+                  <label for="datetime">End Date and Time:</label>
+                  <input type="datetime-local" id="datetime" name="datetime" class="endDate">
+                </div>
+              <div>
+                  <label for="taskStatus">Task Status: </label>
+                  <select name="cars" id="taskStatus" name="taskStatus">
+                      <option value="pending">Pending</option>
+                      <option value="done">Done</option>
+                      <option value="progress">In progress</option>
+                    </select> 
+                </div>
+              <button id="confirmBtn" onclick="createTask()">Confirm</button>
+            </div>
+  </div>
+ <div class="monthWrapper">
+<div class="dayBox" id="1"><p>1</p></div>
+<div class="dayBox" id="2"><p>2</p></div>
+<div class="dayBox" id="3"><p>3</p></div>
+<div class="dayBox" id="4"><p>4</p></div>
+<div class="dayBox" id="5"><p>5</p></div>
+<div class="dayBox" id="6"><p>6</p></div>
+<div class="dayBox" id="7"><p>7</p></div>
+<div class="dayBox" id="8"><p>8</p></div>
+<div class="dayBox" id="9"><p>9</p></div>
+<div class="dayBox" id="10"><p>10</p></div>
+<div class="dayBox" id="11"><p>11</p></div>
+<div class="dayBox" id="12"><p>12</p></div>
+<div class="dayBox" id="13"><p>13</p></div>
+<div class="dayBox" id="14"><p>14</p></div>
+<div class="dayBox" id="15"><p>15</p></div>
+<div class="dayBox" id="16"><p>16</p></div>
+<div class="dayBox" id="17"><p>17</p></div>
+<div class="dayBox" id="18"><p>18</p></div>
+<div class="dayBox" id="19"><p>19</p></div>
+<div class="dayBox" id="20"><p>20</p></div>
+<div class="dayBox" id="21"><p>21</p></div>
+<div class="dayBox" id="22"><p>22</p></div>
+<div class="dayBox" id="23"><p>23</p></div>
+<div class="dayBox" id="24"><p>24</p></div>
+<div class="dayBox" id="25"><p>25</p></div>
+<div class="dayBox" id="26"><p>26</p></div>
+<div class="dayBox" id="27"><p>27</p></div>
+<div class="dayBox" id="28"><p>28</p></div>
+<div class="dayBox" id="29"><p>29</p></div>
+<div class="dayBox" id="30"><p>30</p></div>
+</div>
+</div>       
+</div>
+<script src="calender.js" defer></script>
+</body>
+</html>

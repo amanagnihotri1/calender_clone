@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #2980b9;
+  }
+  .addtask
+  {
+    color: #fff;
+    border: 1.5px solid #fff;
+    background: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-left: 40px;
+    margin-top: 40px;
+  }
+.mainWrapper
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow-y: hidden;
+}
+.calenderWrapper
+{
+    display: flex;  
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+}
+.topNav{
+ position:fixed;
+ top: 0;
+ left: 0;
+width: 100%;
+height: 70px;
+background-color: #03045e;
+display: flex;
+color: #fff;
+justify-content: space-around;
+align-items: center;
+}
+.taskBox
+{
+  border-radius: 12px;
+  width: 120px;
+  height: 40px;
+  padding: 4px 10px;
+  background-color: #3c00ff;
+  color: #ffff;
+  margin: 4px 4px;
+  &:hover{
+  cursor: pointer;
+}
+}
+.subCalenderWrapper
+{
+  width: 70%;
+  display: flex;
+  flex-direction: column;  
+}
+.monthWrapper{
+  margin-top: 120px;
+    width: 70%;
+    overflow-y:scroll;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.leftSide{
+    width: 30%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #2c2a2a;
+}
+.rightSide{
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+.dayBox{
+    width: 200px;
+    height: 120px;
+    overflow: auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1.7px solid #ff8fab;
+ p
+ {
+  margin: 0;
+   position: static;
+   top: 0;
+ }   
+}
+.jw-modal{
+    /* modals are hidden by default */
+    display: none;
+}
+.taskTypeList
+{
+    display: inline;
+li
+{   
+    margin-left: 8px;
+    border: 1.4px solid #3c00ff;
+    padding: 2px 4px;
+    border-radius: 4px;
+    display: inline;
+    text-decoration: none;
+a
+{
+    text-decoration: none;
+}
+}    
+}
+.buttonWrapper{
+  width: 100%;
+  display: flex;
+}
+.leftButton{
+ background-color: #3c00ff;
+ width: 40px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ color: #fff;
+ outline: none;
+ border: none;
+ font-weight: 600;
+ font-size: 1.2rem;
+ border-radius: 8px;
+}
+.currMonth{
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.arrowButton{
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background:none;
+  outline: none;
+  border: 1.6px solid #fff;
+  border-radius: 8px;
+  transition: all ease-in-out 0.1s;
+ &:hover
+ {
+  cursor: pointer;
+  background-color: #3c00ff;
+ } 
+}
+.rightButton{
+  background-color: #3c00ff;
+  font-size: 1.2rem;
+  width: 40px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff; 
+}
+.monthLabel
+{
+    color: #fff;
+    background-color: #3c00ff;
+    padding:10px 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 8px;
+
+
+}
+.close{
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.jw-modal.open {
+    position: fixed;
+    align-items: center;
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    margin: auto 33%;
+    justify-content: center;
+    padding: 20px;
+    background: #000000;
+    width: 450px;
+    height: auto;
+    gap: 10px;
+    box-shadow:
+  0.4px 1.3px 1.9px rgba(0, 0, 0, 0.044),
+  0.9px 3px 4.3px rgba(0, 0, 0, 0.063),
+  1.5px 5.3px 7.7px rgba(0, 0, 0, 0.078),
+  2.6px 8.8px 12.8px rgba(0, 0, 0, 0.092),
+  4.2px 14.5px 21.2px rgba(0, 0, 0, 0.107),
+  7.4px 25.4px 37px rgba(0, 0, 0, 0.126),
+  16px 55px 80px rgba(0, 0, 0, 0.17)
+;
+background-color: #fff;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+#confirmBtn{
+    padding: 10px 40px;
+    background: none;
+    border: 1.6px solid #000000;
+    color: #000;
+    border-radius: 8px;
+    transition: 0.2s;
+&:hover
+{
+    cursor: pointer;
+    background-color: #cfc7c9;
+}
+  }
