@@ -2,7 +2,6 @@ const {pool}=require("../dbConfig/dbConnect");
 const createTask=async(req,res,next)=>{
 try{
     const data=req.body;
-    console.log(data);
     const createTaskquery=await pool.query('INSERT INTO TaskData(tasktype,taskname,taskstartdate,taskenddate,taskstatus) VALUES($1,$2,$3,$4,$5)',[data.tasktype,data.taskname,data.taskstartdate,data.taskenddate,data.taskstatus]);
     if(!createTaskquery)
     {
