@@ -39,13 +39,9 @@ const createTask=async()=>
     const taskEndDate=document.querySelector('.endDate').value;
     console.log(taskEndDate)
     const taskNameValue=document.querySelector(".tasknameInput").value;
-     console.log(taskNameValue);
      const taskStartDate=document.querySelector('.startDate').value;
      const taskType=document.getElementById('taskType').value;
-     console.log(taskType)
-     console.log(taskStartDate);
      const taskStatus=document.getElementById('taskStatus').value;
-     console.log(taskStatus);
      if(!taskEndDate || !taskStartDate || !taskType || !taskNameValue || !taskStatus)
      {
         document.querySelector(".errorBox").innerHTML="Error,field missing";
@@ -65,16 +61,13 @@ for(let i of removePrev){
     i.remove();
 }
 const nextDate=new Date(st.setMonth(monthVal));
-console.log(nextDate);
 monthVal=nextDate.toLocaleDateString().split('/')[1];
-console.log(monthVal);
 const s=document.querySelector(".monthLabel").textContent=monthVal;
 await assignTaskonCalender(monthVal);
 })
 document.getElementById("left").addEventListener("click",async()=>{
     const st=new Date();
     let removePrev=document.querySelectorAll("div.taskBox");
-    console.log(monthVal);
     for(let i of removePrev){
         i.remove();
     }
@@ -97,12 +90,9 @@ window.addEventListener("DOMContentLoaded",async()=>
 const assignTaskonCalender=async(val)=>{
     const allTasks=await getAllTasks();
     const newData=JSON.parse(allTasks);
-    console.log(newData.data);
-    console.log(monthVal);
     for(let i=1;i<=30;i++)
     {  
     const dayTasks=await newData.data.filter((item)=>(parseInt(item.taskstartdate.substr(5,2))==val && parseInt(item.taskstartdate.substr(8,2))==i));
-    console.log(dayTasks);
     if(dayTasks.length>0)
     {   
         const taskWrapper=document.getElementById(i);
