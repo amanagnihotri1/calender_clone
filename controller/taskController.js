@@ -21,7 +21,7 @@ try{
     {
         next(new Error("delete query not working"));
     }
-    res.json({message:"success",data:deleteQuery});
+    res.status(200).json({message:"success",data:deleteQuery});
 }
 catch(err){
   next(err);  
@@ -31,7 +31,7 @@ const updateTask=async(req,res,next)=>{
   try{
     const{taskId,taskStatus}=req.query;
     const queryResult=await pool.query('UPDATE TaskData SET taskStatus=$2 WHERE taskId=$1',[taskId,taskStatus.toLower()]); 
-    res.json({message:"success",data:queryResult});
+    res.status(200).json({message:"success",data:queryResult});
   }catch(err){
     next(err);
   }
